@@ -3,7 +3,10 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import * as Animatable from 'react-native-animatable'
 
+import { useNavigation } from "@react-navigation/native";
+
 export default function Welcome() {
+    const Navigation = useNavigation();
     return(
         <View style={styles.container}>
             <View style={styles.containerLogo}>
@@ -15,7 +18,10 @@ export default function Welcome() {
                 <Text style={styles.title}>Procura trabalho? Deixe conosco!</Text>
                 <Text style={styles.texto}>Crie uma conta para iniciar</Text>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity
+                style={styles.button}
+                onPress={ () => Navigation.navigate('Login')}>
+                    
                     <Text style={styles.buttonTxt}>Começar</Text>
                 </TouchableOpacity>
             </Animatable.View>
@@ -51,14 +57,14 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 30,
         fontWeight: 'bold',
-        marginTop: 0,
+        marginTop: 5,
         marginBottom: 0,
         lineHeight: 33
     },
 
     texto:{
         color: '#a1a1a1',
-        paddingVertical: '2%',
+        paddingVertical: '5%',
     },
 
     buttonTxt:{

@@ -6,12 +6,12 @@ import * as Animatable from 'react-native-animatable';
 import { useNavigation } from "@react-navigation/native";
 
 
-export default function Login() {
+export default function SignIn() {
     const Navigation = useNavigation();
     return(
     <View style={styles.container}>
         <Animatable.View animation="fadeInLeft" delay={400} style={styles.containerHeader}>
-        <Text style={styles.text}>Bem vindo(a)</Text>
+        <Text style={styles.text}>Crie sua conta</Text>
         </Animatable.View>
         
         <Animatable.View animation="fadeInUp" style={styles.containerForm}>
@@ -21,14 +21,17 @@ export default function Login() {
             <Text style={styles.title}>Senha</Text>
             <TextInput placeholder="  Sua senha" style={styles.input}/>
 
+            <Text style={styles.title}>Confirme a senha</Text>
+            <TextInput placeholder="  Confirme sua senha" style={styles.input}/>
+
             <TouchableOpacity style={styles.button} 
             onPress={ () => Navigation.navigate('Home')}>
                 <Text style={styles.buttonTxt}>Acessar</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.buttonCad}
-            onPress={ () => Navigation.navigate('SignIn')}>
-                <Text style={styles.cadTxt}>Não possui conta? Cadastre-se.</Text>
+            onPress={ () => Navigation.navigate('Login')}>
+                <Text style={styles.cadTxt}>Já possui conta? Faça login.</Text>
             </TouchableOpacity>
         </Animatable.View>
     </View>

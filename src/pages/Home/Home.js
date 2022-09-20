@@ -1,11 +1,19 @@
-import { Text, View } from "react-native";
-import { StyleSheet } from "react-native";
+import React from "react";
+import { Text, View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+
+import * as Animatable from 'react-native-animatable';
+
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function Home() {
+    const Navigation = useNavigation();
+    return(
     <View>
         <Text style={style.texto}>Teste</Text>
     </View>
-};
+    );
+}
 
 const style = StyleSheet.create({
     texto: {
