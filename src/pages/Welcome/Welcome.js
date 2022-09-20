@@ -20,7 +20,7 @@ export default function Welcome() {
 
                 <TouchableOpacity
                 style={styles.button}
-                onPress={ () => Navigation.navigate('Login')}>
+                onPress={ () => Navigation.navigate('SignIn')}>
                     
                     <Text style={styles.buttonTxt}>Começar</Text>
                 </TouchableOpacity>

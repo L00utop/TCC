@@ -1,6 +1,8 @@
 import { Text, View } from "react-native";
 import { StyleSheet } from "react-native";
 
+
+
 export default function Profile() {
     <View>
         <Text style={style.texto}>Teste</Text>
