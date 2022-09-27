@@ -42,13 +42,7 @@ export default function Routes() {
         <Stack.Screen
             name="Home"
             component={Home}
-            options={{title: 'Início', headerTitleStyle:{fontFamily: 'Kanit_700Bold'},
-
-            headerRight: () => (
-                <TouchableOpacity style={{ marginRight: 15 }}>
-                    <Feather name="user" size={24} color="black"/>
-                </TouchableOpacity>
-            )}}
+            options={{ headerShown: true, headerLeft: ()=> null }} style={{ flex: 1, fontFamily: 'Kanit_500Bold'}}
             />
 
         <Stack.Screen

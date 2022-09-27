@@ -6,3 +6,4 @@ npm install @react-navigation/drawer
 npm install @react-navigation/native-stack
 npm install feather-icons
 npx expo install react-native-svg@12.3.0
+npm install expo-font@8.3.0 @expo-google-fonts/Kanit

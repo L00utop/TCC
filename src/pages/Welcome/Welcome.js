@@ -12,7 +12,7 @@ export default function Welcome() {
         <View style={styles.container}>
             <View style={styles.containerLogo}>
                 <Animatable.Image animation="fadeInUp" duration={1700} style={styles.Image} source={Logo}/>
-                <Animatable.Text animation="fadeInUp" duration={2300} style={styles.nomeLogo}>OCTO TECH</Animatable.Text>
+                <Animatable.Text animation="fadeInUp" duration={1700} style={styles.nomeLogo}>OCTO TECH</Animatable.Text>
             </View>
 
 
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
 
     nomeLogo: {
         color: 'white',
+        fontFamily: 'Kanit_400Regular',
         fontSize: 50,
         fontWeight: 'bold',
         marginTop: 6,
