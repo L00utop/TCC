@@ -31,6 +31,14 @@ export default function Home() {
             Description="Manutenção de componentes e de computadores em geral."
             onpress={()=> {}}
             />
+
+            <New
+            cover={require('../../../assets/Manutencao.png')}
+            name="Design Gráfico"
+            Description="Faço um design de acordo com as suas preferências."
+            onpress={()=> {}}
+            />
+            
         </ScrollView>
 
     </ScrollView>

@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Feather } from 'react-native-feather';
+import { FontAwesome } from '@expo/vector-icons';
 
 
 
@@ -10,8 +11,6 @@ import Login from '../pages/Login/Login';
 import SignIn from '../pages/SignIn/SignIn';
 import Home from '../pages/Home/Home';
 import Details from '../pages/Home/Details'
-
-
 
 
 
@@ -42,7 +41,10 @@ export default function Routes() {
         <Stack.Screen
             name="Home"
             component={Home}
-            options={{ headerShown: true, headerLeft: ()=> null }} style={{ flex: 1, fontFamily: 'Kanit_500Bold'}}
+            options={{ headerShown: true, headerLeft: ()=> null, headerRight: ()=> 
+            <TouchableOpacity style={{ marginRight: 15 }} >
+                <FontAwesome name="user" size={30} color="black" />
+            </TouchableOpacity>}} style={{ flex: 1, fontFamily: 'Kanit_500Bold'}} 
             />
 
         <Stack.Screen
