@@ -1,9 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Feather } from 'react-native-feather';
 import { FontAwesome } from '@expo/vector-icons';
-
-
+import { useNavigation } from "@react-navigation/native";
 
 
 import Welcome from '../pages/Welcome/Welcome';
@@ -18,6 +16,7 @@ const Stack = createNativeStackNavigator();
 
 
 export default function Routes() { 
+    const Navigation = useNavigation();
     return(
         <Stack.Navigator>
             <Stack.Screen
@@ -38,26 +37,19 @@ export default function Routes() {
             options={{ headerShown: false }}
             />
 
-        <Stack.Screen
+        <Stack.Screen 
             name="Home"
             component={Home}
-            options={{ headerShown: true, headerLeft: ()=> null, headerRight: ()=> 
-            <TouchableOpacity style={{ marginRight: 15 }} >
+            options={{ headerShown: true, headerTitle: '', headerLeft: ()=> null, headerRight: ()=> 
+            <TouchableOpacity style={{ marginRight: 15 }} onPress={ () => Navigation.navigate('Detalhes')}>
                 <FontAwesome name="user" size={30} color="black" />
-            </TouchableOpacity>}} style={{ flex: 1, fontFamily: 'Kanit_500Bold'}} 
+            </TouchableOpacity>}} 
             />
 
         <Stack.Screen
             name="Detalhes"
             component={Details}
-            options={{ headerBackButtonMenuEnabled: false, title: "Detalhes", headerTitleStyle:{fontFamily: 'Kanit_700Bold'},
-
-            headerRight: () => (
-                <TouchableOpacity style={{ marginRight: 15 }}>
-                    <Feather name="user" size={24} color="black"/>
-                </TouchableOpacity>
-            )
-            }}
+            options={{ headerBackButtonMenuEnabled: false, title: "Detalhes", headerTitleStyle:{fontFamily: 'Kanit_700Bold'}}}
             />
         </Stack.Navigator>
     );

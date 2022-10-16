@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from "@react-navigation/native";
-import { Feather } from 'react-native-feather';
+import { FontAwesome } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
 import New from './New/New'
@@ -12,11 +12,11 @@ import New from './New/New'
 export default function Home() {
     const Navigation = useNavigation();
     return(
-    <ScrollView showsVerticalScrollIndicator={false}
-    style={{backgroundColor: 'white'}}>
+    <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>
         <View style={styles.header}>
             <View style={styles.inputArea}>
-                <TextInput placeholder=" O que procura?" style={styles.input} />
+                <FontAwesome name="search" size={25} color="black" style={styles.ico}/>
+                <TextInput placeholder="O que procura?" style={styles.input}/>
             </View>
         </View>
 
@@ -24,24 +24,34 @@ export default function Home() {
             <Text style={styles.title}>Novidades</Text>
         </View>
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15}}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15, paddingVertical: 15}}>
             <New
             cover={require('../../../assets/Manutencao.png')}
             name="Manutenção de computadores"
-            Description="Manutenção de componentes e de computadores em geral."
+            description="Manutenção de componentes e de computadores em geral."
+            price="R$ 240,30"
             onpress={()=> {}}
             />
 
             <New
-            cover={require('../../../assets/Manutencao.png')}
+            cover={require('../../../assets/Design.jpg')}
             name="Design Gráfico"
-            Description="Faço um design de acordo com as suas preferências."
+            description="Faço um design de acordo com as suas preferências."
+            price="R$ 240,30"
             onpress={()=> {}}
             />
-            
-        </ScrollView>
 
+            <New
+            cover={require('../../../assets/FrontEnd.png')}
+            name="FrontEnd"
+            description="FrontEnd para o seu projeto!"
+            price="R$ 240,30"
+            onpress={()=> {}}
+            />
+        </ScrollView>
+        
     </ScrollView>
+    
     );
 }
 
@@ -56,23 +66,31 @@ const styles = StyleSheet.create({
     },
 
     inputArea: {
+        shadowColor: "#000",
+        shadowOffset: {
+	    width: 5,
+	    height: 5,
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
         paddingHorizontal: 15,
         flexDirection: 'row',
         alignItems: 'center',
-        width: '98%',
+        alignContent: 'center',
+        width: '95%',
         backgroundColor: 'white',
         height: 37,
         borderRadius: 10,
     },
 
     input: {
-        borderBottomWidth: 1,
-        height: 40,
+        flex: 1,
+        height: 35,
         width: '100%',
-        marginBottom: 12,
         fontSize: 16,
         borderRadius: 4,
         marginLeft: 20,
+        paddingLeft: 5,
     },
 
     contentNew: {
@@ -82,9 +100,11 @@ const styles = StyleSheet.create({
     },
 
     title: {
+        fontSize: 15,
         paddingHorizontal: 15,
         fontFamily: 'Kanit_500Medium',
         color: '#4f4a4a'
-    }
+    },
+   
     
 });

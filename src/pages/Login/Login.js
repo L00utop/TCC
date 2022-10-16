@@ -16,10 +16,10 @@ export default function Login() {
         
         <Animatable.View animation="fadeInUp" style={styles.containerForm}>
             <Text style={styles.title}>Email</Text>
-            <TextInput placeholder="  Seu email" style={styles.input}/>
+            <TextInput placeholder="Seu email" style={styles.input}/>
 
             <Text style={styles.title}>Senha</Text>
-            <TextInput placeholder="  Sua senha" style={styles.input}/>
+            <TextInput placeholder="Sua senha" secureTextEntry={true} style={styles.input}/>
 
             <TouchableOpacity style={styles.button} 
             onPress={ () => Navigation.navigate('Home')}>
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
         height: 40,
         marginBottom: 12,
         fontSize: 16,
-        borderRadius: 4
+        borderRadius: 4,
+        paddingLeft: 5,
     }, 
 
     button: {

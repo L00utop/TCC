@@ -2,9 +2,12 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Logo from "../../../assets/LogoTCC.png";
 
+
 import * as Animatable from 'react-native-animatable';
+import { Typewriter } from 'react-simple-typewriter'
 
 import { useNavigation } from "@react-navigation/native";
+
 
 export default function Welcome() {
     const Navigation = useNavigation();
@@ -15,10 +18,21 @@ export default function Welcome() {
                 <Animatable.Text animation="fadeInUp" duration={1700} style={styles.nomeLogo}>OCTO TECH</Animatable.Text>
             </View>
 
-
             <Animatable.View animation="fadeInUp" duration={1400} style={styles.containerForm}>
-                <Text style={styles.title}>Procura trabalho? Deixe conosco!</Text>
+                <Text style={styles.title}>Para
+                <View style={styles.animation}>
+                    <Typewriter
+                        words={['técnicos', 'designers', 'developers', 'você!']}
+                        loop
+                        typeSpeed={100}
+                        deleteSpeed={40}
+                        delaySpeed={1200}
+                    />
+                     
+                </View>
+                </Text>
                 <Text style={styles.texto}>Crie uma conta para iniciar</Text>
+            
 
                 <TouchableOpacity
                 style={styles.button}
@@ -26,7 +40,7 @@ export default function Welcome() {
                     
                     <Text style={styles.buttonTxt}>Começar</Text>
                 </TouchableOpacity>
-            </Animatable.View>
+                </Animatable.View>
             
         </View>
     );
@@ -75,15 +89,26 @@ const styles = StyleSheet.create({
     },
 
     title:{
-        fontSize: 30,
+        position: 'relative',
+        fontSize: 40,
         color: '#3382fb',
         fontWeight: 'bold',
-        marginTop: 5,
+        marginTop: 35,
         marginBottom: 0,
-        lineHeight: 33
+        lineHeight: 33,
+        
+    },
+    
+    animation:{
+        position: 'relative',
+        width: 250,
+        fontSize: 40,
+        marginTop: 2,
     },
 
     texto:{
+        position: 'absolute',
+        top: 100,
         color: '#a1a1a1',
         paddingVertical: '5%',
     },
