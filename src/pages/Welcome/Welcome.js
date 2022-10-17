@@ -28,7 +28,6 @@ export default function Welcome() {
                         deleteSpeed={40}
                         delaySpeed={1200}
                     />
-                     
                 </View>
                 </Text>
                 <Text style={styles.texto}>Crie uma conta para iniciar</Text>
@@ -69,6 +68,13 @@ const styles = StyleSheet.create({
     },
 
     Image: {
+        shadowColor: "#000",
+        shadowOffset: {
+	    width: 5,
+	    height: 5,
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
         flex: 1,
         width: 270,
         height: 270,
@@ -118,6 +124,13 @@ const styles = StyleSheet.create({
     },
 
     button: {
+        shadowColor: "#000",
+        shadowOffset: {
+	    width: 5,
+	    height: 5,
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
         position: 'absolute',
         backgroundColor: '#539afc',
         borderRadius: 50,

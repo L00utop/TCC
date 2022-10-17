@@ -12,18 +12,18 @@ import New from './New/New'
 export default function Home() {
     const Navigation = useNavigation();
     return(
-    <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>
-        <View style={styles.header}>
+<ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>
+        <Animatable.View animation="fadeInUp" duration={900} style={styles.header}>
             <View style={styles.inputArea}>
                 <FontAwesome name="search" size={25} color="black" style={styles.ico}/>
                 <TextInput placeholder="O que procura?" style={styles.input}/>
             </View>
-        </View>
+        </Animatable.View>
 
-        <View style={styles.contentNew}>
+        <Animatable.View animation="fadeInLeft" delay={200} style={styles.contentNew}>
             <Text style={styles.title}>Novidades</Text>
-        </View>
-
+        </Animatable.View>
+    <Animatable.View animation="fadeInUp" duration={900}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15, paddingVertical: 15}}>
             <New
             cover={require('../../../assets/Manutencao.png')}
@@ -45,12 +45,12 @@ export default function Home() {
             cover={require('../../../assets/FrontEnd.png')}
             name="FrontEnd"
             description="FrontEnd para o seu projeto!"
-            price="R$ 240,30"
+            price="R$ 300,30"
             onpress={()=> {}}
             />
         </ScrollView>
-        
-    </ScrollView>
+    </Animatable.View>
+</ScrollView>
     
     );
 }
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 15,
         paddingHorizontal: 15,
-        fontFamily: 'Kanit_500Medium',
+        fontFamily: 'Kanit_700Bold',
         color: '#4f4a4a'
     },
    

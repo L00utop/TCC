@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontFamily: 'Kanit_500Medium',
+        fontFamily: 'Kanit_700Bold',
         fontSize: 12,
         color: '#4f4a4a'
     },
