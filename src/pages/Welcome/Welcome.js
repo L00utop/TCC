@@ -24,6 +24,7 @@ export default function Welcome() {
                     <Typewriter
                         words={['técnicos', 'designers', 'developers', 'você!']}
                         loop
+                        cursor
                         typeSpeed={100}
                         deleteSpeed={40}
                         delaySpeed={1200}

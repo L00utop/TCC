@@ -12,6 +12,7 @@ import New from './New/New'
 export default function Home() {
     const Navigation = useNavigation();
     return(
+<ScrollView>    
 <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>
         <Animatable.View animation="fadeInUp" duration={900} style={styles.header}>
             <View style={styles.inputArea}>
@@ -23,34 +24,40 @@ export default function Home() {
         <Animatable.View animation="fadeInLeft" delay={200} style={styles.contentNew}>
             <Text style={styles.title}>Novidades</Text>
         </Animatable.View>
-    <Animatable.View animation="fadeInUp" duration={900}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15, paddingVertical: 15}}>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15, paddingVertical: 15}}>
+        <Animatable.View animation="fadeInUp" duration={900}>
             <New
             cover={require('../../../assets/Manutencao.png')}
             name="Manutenção de computadores"
             description="Manutenção de componentes e de computadores em geral."
             price="R$ 240,30"
-            onpress={()=> {}}
+            onPress={()=> {}}
             />
+        </Animatable.View>
 
+        <Animatable.View animation="fadeInUp" duration={900} delay={200}>
             <New
             cover={require('../../../assets/Design.jpg')}
             name="Design Gráfico"
             description="Faço um design de acordo com as suas preferências."
             price="R$ 240,30"
-            onpress={()=> {}}
+            onPress={() => {}}
             />
+        </Animatable.View>
 
+        <Animatable.View animation="fadeInUp" duration={900} delay={150}>
             <New
             cover={require('../../../assets/FrontEnd.png')}
             name="FrontEnd"
             description="FrontEnd para o seu projeto!"
             price="R$ 300,30"
-            onpress={()=> {}}
+            onPress={()=> {}}
             />
+        </Animatable.View>
+
         </ScrollView>
-    </Animatable.View>
 </ScrollView>
+</ScrollView>   
     
     );
 }

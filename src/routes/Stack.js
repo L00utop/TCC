@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 
 import Welcome from '../pages/Welcome/Welcome';
+import Profile from '../pages/Profile/Profile'
 import Login from '../pages/Login/Login';
 import SignIn from '../pages/SignIn/SignIn';
 import Home from '../pages/Home/Home';
@@ -41,7 +42,7 @@ export default function Routes() {
             name="Home"
             component={Home}
             options={{ headerShown: true, headerTitle: '', headerLeft: ()=> null, headerRight: ()=> 
-            <TouchableOpacity style={{ marginRight: 15 }} onPress={ () => Navigation.navigate('Detalhes')}>
+            <TouchableOpacity style={{ marginRight: 15 }} onPress={ () => Navigation.navigate('Perfil')}>
                 <FontAwesome name="user" size={30} color="black" />
             </TouchableOpacity>}} 
             />
@@ -50,6 +51,12 @@ export default function Routes() {
             name="Detalhes"
             component={Details}
             options={{ headerBackButtonMenuEnabled: false, title: "Detalhes", headerTitleStyle:{fontFamily: 'Kanit_700Bold'}}}
+            />
+            
+        <Stack.Screen
+            name="Perfil"
+            component={Profile}
+            options={{ title: "Perfil", headerTitleStyle:{fontFamily: 'Kanit_700Bold'}}}
             />
         </Stack.Navigator>
     );

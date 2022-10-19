@@ -1,17 +1,10 @@
-import { Text, View } from "react-native";
-import { StyleSheet } from "react-native";
-
-
+import React from 'react';
+import { View, Text } from 'react-native';
 
 export default function Profile() {
-    <View>
-        <Text style={style.texto}>Teste</Text>
-    </View>
-};
-
-const style = StyleSheet.create({
-    texto: {
-        fontSize: 18,
-        marginBottom: 20
-    },
-});
+ return (
+   <View>
+    <Text>a</Text>
+   </View>
+  );
+}
