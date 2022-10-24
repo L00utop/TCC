@@ -5,7 +5,8 @@ import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
-import New from './New/New'
+
+import New from './New/New';
 import Recomendation from "./Recomendations/Recomendation";
 
 
@@ -27,12 +28,12 @@ export default function Home() {
         </Animatable.View>
   
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15, paddingVertical: 15}}>
-
+    
         <Animatable.View animation="fadeInUp" duration={900}>
             <New
             cover={require('../../../assets/Manutencao.png')}
             name="Manutenção de computadores"
-            description="Manutenção de componentes e de computadores em geral."
+            description="Manutenção de computadores."
             price="R$ 240,30"
             onPress={()=> Navigation.navigate("Detalhes")}
             />
@@ -86,38 +87,25 @@ export default function Home() {
 const dados = [
     {
         img: require("../../../assets/FrontEnd.png"),
-        nome: "Teste",
+        name: "Teste",
         description: "Qualquer coisa",
         price: "R$ 10,00"
     },
     {
         img: require("../../../assets/FrontEnd.png"),
-        nome: "Teste1",
+        name: "Teste1",
         description: "Qualquer coisa",
         price: "R$ 10,00"
     },
     {
         img: require("../../../assets/FrontEnd.png"),
-        nome: "Teste2",
+        name: "Teste2",
         description: "Qualquer coisa",
-        price: "R$ 10,00"
+        price: "R$ 10,00",
     },
-    {
-        img: require("../../../assets/FrontEnd.png"),
-        nome: "Teste3",
-        description: "Qualquer coisa",
-        price: "R$ 10,00"
-    },
-    {
-        img: require("../../../assets/FrontEnd.png"),
-        nome: "Teste4",
-        description: "Qualquer coisa",
-        price: "R$ 10,00"
-    }
-    
 ]
 
-console.log(dados);
+
 
 const styles = StyleSheet.create({
     header: {
@@ -167,7 +155,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         paddingHorizontal: 15,
         marginBottom: 10,
-        fontFamily: 'Kanit_700Bold',
+        fontFamily: 'Montserrat_700Bold',
         color: '#4f4a4a'
     },
    

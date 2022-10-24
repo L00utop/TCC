@@ -22,10 +22,10 @@ export default function Recomendation(props){
         <Text style={styles.description}>{props.description}</Text>
 
         <View style={styles.footer}>
-            <View style={{width: '80%'}}>
+            <View style={{width: '80%', marginRight: 25}}>
                 <Text style={styles.price}>{props.price}</Text>
             </View>
-            <View style={{width: '20%', marginLeft: 10}}>
+            <View style={{width: '20%'}}>
                 <AntDesign name="plus" size={20} color="black" />
             </View>
         </View>
@@ -67,13 +67,13 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontFamily: 'Kanit_700Bold',
-        fontSize: 15,
+        fontFamily: 'Montserrat_700Bold',
+        fontSize: 13,
         color: '#4f4a4a'
     },
 
     badge: {
-        fontFamily: 'Kanit_500Medium',
+        fontFamily: 'Montserrat_700Bold',
         fontSize: 12,
     
     },
@@ -88,10 +88,11 @@ const styles = StyleSheet.create({
     },
 
     description: {
-        fontFamily: 'Kanit_400Regular',
+        fontFamily: 'Montserrat_600SemiBold',
         fontSize: 12,
         color: '#4f4a4a'
     },
+
     footer: {
         position: 'absolute',
         top: 200,
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     },
     price:{
         fontSize: 15,
-        fontFamily: 'Kanit_500Medium',
+        fontFamily: 'Montserrat_700Bold',
         alignSelf: 'baseline'
     }
 })

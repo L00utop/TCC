@@ -24,14 +24,14 @@ export default function Welcome() {
                     <Typewriter
                         words={['técnicos', 'designers', 'developers', 'você!']}
                         loop
+                        fontFamily={'Montserrat_600SemiBold'}
                         typeSpeed={100}
                         deleteSpeed={40}
                         delaySpeed={1200}
                     />
                 </View>
                 </Text>
-                <Text style={styles.texto}>Crie uma conta ou faça 
-                login para iniciar</Text>
+                <Text style={styles.texto}>Crie uma conta para iniciar</Text>
             
 
                 <TouchableOpacity
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
 
     nomeLogo: {
         color: 'white',
-        fontFamily: 'Kanit_400Regular',
+        fontFamily: 'Montserrat_600SemiBold',
         fontSize: 50,
         fontWeight: 'bold',
         marginTop: 6,

@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         shadowRadius: 7.49,
         marginTop: 20,
         backgroundColor: 'white',
-        height: 250,
+        height: 260,
         width:  190,
         borderRadius: 10,
         padding: 10,
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     },
 
     cover: {
+        marginBottom: 5,
         width: 170,
         height: 110,
         borderRadius: 10,
@@ -67,15 +68,15 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontFamily: 'Kanit_700Bold',
+        fontFamily: 'Montserrat_700Bold',
         fontSize: 12,
         color: '#4f4a4a'
     },
 
     badge: {
-        fontFamily: 'Kanit_500Medium',
+        fontFamily: 'Montserrat_700Bold',
         fontSize: 12,
-    
+
     },
     
     dot: {
@@ -84,17 +85,16 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         backgroundColor: 'lightblue',
         marginHorizontal: 6,
-    
     },
 
     description: {
-        fontFamily: 'Kanit_400Regular',
-        fontSize: 12,
+        fontFamily: 'Montserrat_600SemiBold',
+        fontSize: 11,
         color: '#4f4a4a'
     },
     footer: {
         position: 'absolute',
-        top: 200,
+        bottom: 2,
         flexDirection: 'row',
         marginTop: 15,
         alignItems: 'center',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     },
     price:{
         fontSize: 15,
-        fontFamily: 'Kanit_500Medium',
+        fontFamily: 'Montserrat_700Bold',
         alignSelf: 'baseline'
     }
 })
