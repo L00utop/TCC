@@ -24,14 +24,14 @@ export default function Welcome() {
                     <Typewriter
                         words={['técnicos', 'designers', 'developers', 'você!']}
                         loop
-                        cursor
                         typeSpeed={100}
                         deleteSpeed={40}
                         delaySpeed={1200}
                     />
                 </View>
                 </Text>
-                <Text style={styles.texto}>Crie uma conta para iniciar</Text>
+                <Text style={styles.texto}>Crie uma conta ou faça 
+                login para iniciar</Text>
             
 
                 <TouchableOpacity
@@ -39,6 +39,12 @@ export default function Welcome() {
                 onPress={ () => Navigation.navigate('SignIn')}>
                     
                     <Text style={styles.buttonTxt}>Começar</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                style={styles.button}
+                onPress={ () => Navigation.navigate('Login')}>
+                    
+                    <Text style={styles.buttonTxt}>Login</Text>
                 </TouchableOpacity>
                 </Animatable.View>
             

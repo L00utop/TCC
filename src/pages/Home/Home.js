@@ -6,13 +6,14 @@ import { FontAwesome } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
 import New from './New/New'
+import Recomendation from "./Recomendations/Recomendation";
 
 
 
 export default function Home() {
     const Navigation = useNavigation();
     return(
-<ScrollView>    
+<ScrollView style={{backgroundColor: 'white'}}>    
 <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>
         <Animatable.View animation="fadeInUp" duration={900} style={styles.header}>
             <View style={styles.inputArea}>
@@ -31,7 +32,7 @@ export default function Home() {
             name="Manutenção de computadores"
             description="Manutenção de componentes e de computadores em geral."
             price="R$ 240,30"
-            onPress={()=> {}}
+            onPress={()=> Navigation.navigate("Detalhes")}
             />
         </Animatable.View>
 
@@ -41,7 +42,7 @@ export default function Home() {
             name="Design Gráfico"
             description="Faço um design de acordo com as suas preferências."
             price="R$ 240,30"
-            onPress={() => {}}
+            onPress={() => Navigation.navigate("Detalhes")}
             />
         </Animatable.View>
 
@@ -51,12 +52,45 @@ export default function Home() {
             name="FrontEnd"
             description="FrontEnd para o seu projeto!"
             price="R$ 300,30"
-            onPress={()=> {}}
+            onPress={()=> Navigation.navigate("Detalhes")}
             />
         </Animatable.View>
 
         </ScrollView>
 </ScrollView>
+        <Animatable.View animation="fadeInLeft" delay={200} style={styles.contentNew}>
+            <Text style={styles.title}>Recomendações</Text>
+        </Animatable.View>
+        
+        <Animatable.View animation="fadeInUp" duration={900} delay={150}>
+        <Recomendation
+        cover={require("../../../assets/FrontEnd.png")}
+        name="teste"
+        price="R$ 10,00"
+        onPress={()=> Navigation.navigate("Detalhes")}
+        />
+        </Animatable.View>
+        
+        <Animatable.View animation="fadeInUp" duration={900} delay={150}>
+        <Recomendation
+        cover={require("../../../assets/FrontEnd.png")}
+        name="teste"
+        price="R$ 10,00"
+        onPress={()=> Navigation.navigate("Detalhes")}
+        />
+        </Animatable.View>
+
+        <Animatable.View animation="fadeInUp" duration={900} delay={150}>
+        <Recomendation
+        cover={require("../../../assets/FrontEnd.png")}
+        name="teste"
+        price="R$ 10,00"
+        onPress={()=> Navigation.navigate("Detalhes")}
+        />
+        </Animatable.View>
+
+       
+
 </ScrollView>   
     
     );
