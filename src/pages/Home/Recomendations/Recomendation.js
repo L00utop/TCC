@@ -25,7 +25,7 @@ export default function Recomendation(props){
             <View style={{width: '80%'}}>
                 <Text style={styles.price}>{props.price}</Text>
             </View>
-            <View style={{width: '20%'}}>
+            <View style={{width: '20%', marginLeft: 10}}>
                 <AntDesign name="plus" size={20} color="black" />
             </View>
         </View>

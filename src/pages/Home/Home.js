@@ -13,7 +13,7 @@ import Recomendation from "./Recomendations/Recomendation";
 export default function Home() {
     const Navigation = useNavigation();
     return(
-<ScrollView style={{backgroundColor: 'white'}}>    
+<ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>    
 <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>
         <Animatable.View animation="fadeInUp" duration={900} style={styles.header}>
             <View style={styles.inputArea}>
@@ -25,7 +25,9 @@ export default function Home() {
         <Animatable.View animation="fadeInLeft" delay={200} style={styles.contentNew}>
             <Text style={styles.title}>Novidades</Text>
         </Animatable.View>
+  
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15, paddingVertical: 15}}>
+
         <Animatable.View animation="fadeInUp" duration={900}>
             <New
             cover={require('../../../assets/Manutencao.png')}
@@ -61,40 +63,61 @@ export default function Home() {
         <Animatable.View animation="fadeInLeft" delay={200} style={styles.contentNew}>
             <Text style={styles.title}>Recomendações</Text>
         </Animatable.View>
-        
-        <Animatable.View animation="fadeInUp" duration={900} delay={150}>
-        <Recomendation
-        cover={require("../../../assets/FrontEnd.png")}
-        name="teste"
-        price="R$ 10,00"
-        onPress={()=> Navigation.navigate("Detalhes")}
-        />
-        </Animatable.View>
-        
-        <Animatable.View animation="fadeInUp" duration={900} delay={150}>
-        <Recomendation
-        cover={require("../../../assets/FrontEnd.png")}
-        name="teste"
-        price="R$ 10,00"
-        onPress={()=> Navigation.navigate("Detalhes")}
-        />
-        </Animatable.View>
 
-        <Animatable.View animation="fadeInUp" duration={900} delay={150}>
-        <Recomendation
-        cover={require("../../../assets/FrontEnd.png")}
-        name="teste"
-        price="R$ 10,00"
-        onPress={()=> Navigation.navigate("Detalhes")}
-        />
-        </Animatable.View>
-
-       
+        {
+            dados.map(recomendation =>(
+                <Animatable.View animation="fadeInUp" duration={900} delay={150}>
+                    <Recomendation 
+                        cover={recomendation.img}
+                        name={recomendation.name}
+                        price={recomendation.price}
+                        description={recomendation.description}
+                    />
+                </Animatable.View>
+            ))
+        }  
 
 </ScrollView>   
     
     );
 }
+
+
+const dados = [
+    {
+        img: require("../../../assets/FrontEnd.png"),
+        nome: "Teste",
+        description: "Qualquer coisa",
+        price: "R$ 10,00"
+    },
+    {
+        img: require("../../../assets/FrontEnd.png"),
+        nome: "Teste1",
+        description: "Qualquer coisa",
+        price: "R$ 10,00"
+    },
+    {
+        img: require("../../../assets/FrontEnd.png"),
+        nome: "Teste2",
+        description: "Qualquer coisa",
+        price: "R$ 10,00"
+    },
+    {
+        img: require("../../../assets/FrontEnd.png"),
+        nome: "Teste3",
+        description: "Qualquer coisa",
+        price: "R$ 10,00"
+    },
+    {
+        img: require("../../../assets/FrontEnd.png"),
+        nome: "Teste4",
+        description: "Qualquer coisa",
+        price: "R$ 10,00"
+    }
+    
+]
+
+console.log(dados);
 
 const styles = StyleSheet.create({
     header: {
@@ -143,6 +166,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 15,
         paddingHorizontal: 15,
+        marginBottom: 10,
         fontFamily: 'Kanit_700Bold',
         color: '#4f4a4a'
     },
