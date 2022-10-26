@@ -50,9 +50,9 @@ const styles = StyleSheet.create({
         padding: 10,
         marginRight: 20,
         marginLeft: 10,
-        MarginBottom: 5
+        marginBottom: 15
     },
-
+    
     cover: {
         width: "100%",
         height: 110,

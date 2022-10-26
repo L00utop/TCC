@@ -28,36 +28,20 @@ export default function Home() {
         </Animatable.View>
   
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15, paddingVertical: 15}}>
-    
+
+    {
+        dadosnew.map(novo=> (
         <Animatable.View animation="fadeInUp" duration={900}>
             <New
-            cover={require('../../../assets/Manutencao.png')}
-            name="Manutenção de computadores"
-            description="Manutenção de computadores."
-            price="R$ 240,30"
-            onPress={()=> Navigation.navigate("Detalhes")}
+                cover={novo.img}
+                name={novo.name}
+                price={novo.price}
+                description={novo.description}
+                onPress={()=> Navigation.navigate("Detalhes")}
             />
         </Animatable.View>
-
-        <Animatable.View animation="fadeInUp" duration={900} delay={200}>
-            <New
-            cover={require('../../../assets/Design.jpg')}
-            name="Design Gráfico"
-            description="Faço um design de acordo com as suas preferências."
-            price="R$ 240,30"
-            onPress={() => Navigation.navigate("Detalhes")}
-            />
-        </Animatable.View>
-
-        <Animatable.View animation="fadeInUp" duration={900} delay={150}>
-            <New
-            cover={require('../../../assets/FrontEnd.png')}
-            name="FrontEnd"
-            description="FrontEnd para o seu projeto!"
-            price="R$ 300,30"
-            onPress={()=> Navigation.navigate("Detalhes")}
-            />
-        </Animatable.View>
+        ))
+    }
 
         </ScrollView>
 </ScrollView>
@@ -87,21 +71,43 @@ export default function Home() {
 const dados = [
     {
         img: require("../../../assets/FrontEnd.png"),
+        name: "Front-End",
+        description: "Front-End de acordo com as suas preferências!",
+        price: "R$ 500,00"
+    },
+    {
+        img: require("../../../assets/Manutencao.png"),
+        name: "Manutenção",
+        description: "Manuntenção de computadores e componentes.",
+        price: "R$ 200,00",
+    },
+    {
+        img: require("../../../assets/Design.jpg"),
+        name: "Design gráfico",
+        description: "Design de acordo com as suas escolhas!",
+        price: "R$ 150,00",
+    },
+
+]
+
+const dadosnew = [
+    {
+        img: require("../../../assets/FrontEnd.png"),
         name: "Teste",
         description: "Qualquer coisa",
         price: "R$ 10,00"
     },
     {
         img: require("../../../assets/FrontEnd.png"),
-        name: "Teste1",
+        name: "Teste",
         description: "Qualquer coisa",
         price: "R$ 10,00"
     },
     {
         img: require("../../../assets/FrontEnd.png"),
-        name: "Teste2",
+        name: "Teste",
         description: "Qualquer coisa",
-        price: "R$ 10,00",
+        price: "R$ 10,00"
     },
 ]
 
@@ -152,9 +158,10 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 15,
+        fontSize: 18,
         paddingHorizontal: 15,
         marginBottom: 10,
+        paddingTop: 10,
         fontFamily: 'Montserrat_700Bold',
         color: '#4f4a4a'
     },

@@ -19,20 +19,21 @@ export default function Welcome() {
             </View>
 
             <Animatable.View animation="fadeInUp" duration={1400} style={styles.containerForm}>
+                <View style={styles.titleForm}>
                 <Text style={styles.title}>Para
                 <View style={styles.animation}>
                     <Typewriter
                         words={['técnicos', 'designers', 'developers', 'você!']}
                         loop
                         fontFamily={'Montserrat_600SemiBold'}
-                        typeSpeed={100}
-                        deleteSpeed={40}
+                        typeSpeed={120}
+                        deleteSpeed={50}
                         delaySpeed={1200}
                     />
                 </View>
                 </Text>
                 <Text style={styles.texto}>Crie uma conta para iniciar</Text>
-            
+                </View>
 
                 <TouchableOpacity
                 style={styles.button}
@@ -61,11 +62,15 @@ const styles = StyleSheet.create({
 
     nomeLogo: {
         color: 'white',
-        fontFamily: 'Montserrat_600SemiBold',
+        fontFamily: 'Montserrat_800ExtraBold',
         fontSize: 50,
         fontWeight: 'bold',
         marginTop: 6,
         marginBottom: 60,
+    },
+
+    titleForm:{
+        left: 5,
     },
 
     Image: {
@@ -97,6 +102,7 @@ const styles = StyleSheet.create({
 
     title:{
         position: 'relative',
+        fontFamily: 'Montserrat_800ExtraBold',
         fontSize: 40,
         color: '#3382fb',
         fontWeight: 'bold',
