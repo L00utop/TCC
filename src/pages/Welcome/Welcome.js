@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     title:{
         position: 'relative',
         fontFamily: 'Montserrat_800ExtraBold',
-        fontSize: 40,
+        fontSize: 35,
         color: '#3382fb',
         fontWeight: 'bold',
         marginTop: 35,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     animation:{
         position: 'relative',
         width: 250,
-        fontSize: 40,
+        fontSize: 35,
         marginTop: 2,
     },
 

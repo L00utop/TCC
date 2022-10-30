@@ -1,7 +1,8 @@
+npm install -g expo-cli
 npm i react-simple-typewriter
 npm install @react-navigation/native-stack
 npx expo install @expo-google-fonts/montserrat expo-font expo-app-loading
-npm install -g expo-cli
 npm install @react-navigation/native
 npx expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
-npm install @react-navigation/native-stack
+npm install react-native-animatable
+npx expo install react-native-swiper

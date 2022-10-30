@@ -41,7 +41,7 @@ export default function Routes() {
         <Stack.Screen 
             name="Home"
             component={Home}
-            options={{ headerShown: true, headerTitle: '', headerLeft: ()=> null, headerRight: ()=> 
+            options={{ headerShown: true, headerTitle: 'Início', headerTitleStyle:{fontFamily: 'Montserrat_800ExtraBold'}, headerLeft: ()=> null, headerRight: ()=> 
             <TouchableOpacity style={{ marginRight: 15 }} onPress={ () => Navigation.navigate('Perfil')}>
                 <FontAwesome name="user" size={30} color="black" />
             </TouchableOpacity>}} 
@@ -50,13 +50,13 @@ export default function Routes() {
         <Stack.Screen
             name="Detalhes"
             component={Details}
-            options={{ headerBackButtonMenuEnabled: false, title: "Detalhes", headerTitleStyle:{fontFamily: 'Kanit_700Bold'}}}
+            options={{ headerBackButtonMenuEnabled: false, title: "Detalhes", headerTitleStyle:{fontFamily: 'Montserrat_800ExtraBold'}}}
             />
             
         <Stack.Screen
             name="Perfil"
             component={Profile}
-            options={{ title: "Perfil", headerTitleStyle:{fontFamily: 'Kanit_700Bold'}}}
+            options={{ title: "Perfil", headerTitleStyle:{fontFamily: 'Montserrat_800ExtraBold'}}}
             />
         </Stack.Navigator>
     );
