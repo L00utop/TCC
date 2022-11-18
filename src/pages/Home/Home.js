@@ -11,8 +11,30 @@ import Recomendation from "./Recomendations/Recomendation";
 
 
 
-export default function Home() {
-    const Navigation = useNavigation();
+export default function Home(props) {
+    const navigation = useNavigation();
+
+    const dados = [
+        {
+            img: require("../../../assets/FrontEnd.png"),
+            name: "Front-End",
+            description: "Front-End de acordo com as suas preferências!",
+            price: "R$ 500,00"
+        },
+        {
+            img: require("../../../assets/Manutencao.png"),
+            name: "Manutenção",
+            description: "Manuntenção de computadores e componentes.",
+            price: "R$ 200,00",
+        },
+        {
+            img: require("../../../assets/Design.jpg"),
+            name: "Design gráfico",
+            description: "Design de acordo com as suas escolhas!",
+            price: "R$ 150,00",
+        },
+    
+    ]
     return(
 <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>    
 <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>
@@ -30,14 +52,14 @@ export default function Home() {
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15, paddingVertical: 15}}>
 
     {
-        dadosnew.map(novo=> (
+        dados.map(novo=> (
         <Animatable.View animation="fadeInUp" duration={900}>
             <New
                 cover={novo.img}
                 name={novo.name}
                 price={novo.price}
                 description={novo.description}
-                onPress={()=> Navigation.navigate("Detalhes")}
+                onPress={()=> props.navigation.navigate("Detalhes", dados)}
             />
         </Animatable.View>
         ))
@@ -57,6 +79,7 @@ export default function Home() {
                         name={recomendation.name}
                         price={recomendation.price}
                         description={recomendation.description}
+                        onPress={() => props.navigation.navigate("Detalhes", dados)}
                     />
                 </Animatable.View>
             ))
@@ -68,48 +91,9 @@ export default function Home() {
 }
 
 
-const dados = [
-    {
-        img: require("../../../assets/FrontEnd.png"),
-        name: "Front-End",
-        description: "Front-End de acordo com as suas preferências!",
-        price: "R$ 500,00"
-    },
-    {
-        img: require("../../../assets/Manutencao.png"),
-        name: "Manutenção",
-        description: "Manuntenção de computadores e componentes.",
-        price: "R$ 200,00",
-    },
-    {
-        img: require("../../../assets/Design.jpg"),
-        name: "Design gráfico",
-        description: "Design de acordo com as suas escolhas!",
-        price: "R$ 150,00",
-    },
 
-]
 
-const dadosnew = [
-    {
-        img: require("../../../assets/FrontEnd.png"),
-        name: "Front-End",
-        description: "Front-End de acordo com as suas preferências!",
-        price: "R$ 500,00"
-    },
-    {
-        img: require("../../../assets/Manutencao.png"),
-        name: "Manutenção",
-        description: "Manuntenção de computadores e componentes.",
-        price: "R$ 200,00"
-    },
-    {
-        img: require("../../../assets/Design.jpg"),
-        name: "Design gráfico",
-        description: "Design de acordo com as suas escolhas!",
-        price: "R$ 150,00"
-    },
-]
+
 
 
 

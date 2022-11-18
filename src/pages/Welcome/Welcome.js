@@ -23,7 +23,7 @@ export default function Welcome() {
                 <Text style={styles.title}>Para
                 <View style={styles.animation}>
                     <Typewriter
-                        words={['técnicos', 'designers', 'developers', 'você!']}
+                        words={['técnicos', 'designers', 'developers','arrombados' ,'você!']}
                         loop
                         fontFamily={'Montserrat_600SemiBold'}
                         typeSpeed={120}

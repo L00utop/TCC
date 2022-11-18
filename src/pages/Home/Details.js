@@ -8,8 +8,9 @@ import SwiperComponent from "./Swiper/Swiper";
 import { useNavigation } from "@react-navigation/native";
 
 
-export default function Details() {
+export default function Details(props) {
     const Navigation = useNavigation();
+    console.log(props)
     
     return(
     <View>
