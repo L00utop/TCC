@@ -19,19 +19,19 @@ export default function Home(props) {
             img: require("../../../assets/FrontEnd.png"),
             name: "Front-End",
             description: "Front-End de acordo com as suas preferências!",
-            price: "R$ 500,00"
+            price: "R$ --,--"
         },
         {
             img: require("../../../assets/Manutencao.png"),
             name: "Manutenção",
             description: "Manuntenção de computadores e componentes.",
-            price: "R$ 200,00",
+            price: "R$ --,--",
         },
         {
             img: require("../../../assets/Design.jpg"),
             name: "Design gráfico",
             description: "Design de acordo com as suas escolhas!",
-            price: "R$ 150,00",
+            price: "R$ --,--",
         },
     
     ]

@@ -10,7 +10,7 @@ import Login from '../pages/Login/Login';
 import SignIn from '../pages/SignIn/SignIn';
 import Home from '../pages/Home/Home';
 import Details from '../pages/Home/Details';
-import DetailsNew from '../pages/Home/DetalhesNew'
+import DetailsNew from '../pages/Home/DetailsComponent/DetailsNew'
 
 
 
