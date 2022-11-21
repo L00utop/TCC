@@ -59,7 +59,7 @@ export default function Home(props) {
                 name={novo.name}
                 price={novo.price}
                 description={novo.description}
-                onPress={()=> props.navigation.navigate("Detalhes", dados)}
+                onPress={()=> props.navigation.navigate("DetailsNew", novo)}
             />
         </Animatable.View>
         ))

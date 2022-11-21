@@ -9,7 +9,8 @@ import Profile from '../pages/Profile/Profile'
 import Login from '../pages/Login/Login';
 import SignIn from '../pages/SignIn/SignIn';
 import Home from '../pages/Home/Home';
-import Details from '../pages/Home/Details'
+import Details from '../pages/Home/Details';
+import DetailsNew from '../pages/Home/DetalhesNew'
 
 
 
@@ -57,6 +58,11 @@ export default function Routes() {
             name="Perfil"
             component={Profile}
             options={{ title: "Perfil", headerTitleStyle:{fontFamily: 'Montserrat_800ExtraBold'}}}
+            />
+        <Stack.Screen
+            name="DetailsNew"
+            component={DetailsNew}
+            options={{ title: "Detalhes", headerTitleStyle:{fontFamily: 'Montserrat_800ExtraBold'}}}
             />
         </Stack.Navigator>
     );

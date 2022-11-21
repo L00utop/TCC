@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Details(props) {
     const Navigation = useNavigation();
-    console.log(props)
+    console.log(props.route.params)
     
     return(
     <View>
