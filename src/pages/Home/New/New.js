@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 
 
+
 export default function New(props){
     return(
     <TouchableOpacity onPress={props.onPress} style={styles.container}>

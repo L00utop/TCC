@@ -19,22 +19,26 @@ export default function Home(props) {
             img: require("../../../assets/FrontEnd.png"),
             name: "Front-End",
             description: "Front-End de acordo com as suas preferências!",
+            description2: "Utilizarei um framework de JavaScript como React ou Vue para a realização do seu projeto!",
             price: "R$ --,--"
         },
         {
             img: require("../../../assets/Manutencao.png"),
             name: "Manutenção",
             description: "Manuntenção de computadores e componentes.",
+            description2: "Realizarei a manutenção completa de computadores e celulares de sua escolha!",
             price: "R$ --,--",
         },
         {
             img: require("../../../assets/Design.jpg"),
             name: "Design gráfico",
             description: "Design de acordo com as suas escolhas!",
+            description2: "Utilizarei ferramentas de vetor ou bitmap para a realização de um design de acordo com as suas escolhas!",
             price: "R$ --,--",
         },
     
     ]
+    
     return(
 <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>    
 <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white'}}>
@@ -59,7 +63,7 @@ export default function Home(props) {
                 name={novo.name}
                 price={novo.price}
                 description={novo.description}
-                onPress={()=> props.navigation.navigate("DetailsNew", novo)}
+                onPress={()=> props.navigation.navigate("Details", novo)}
             />
         </Animatable.View>
         ))
@@ -79,18 +83,15 @@ export default function Home(props) {
                         name={recomendation.name}
                         price={recomendation.price}
                         description={recomendation.description}
-                        onPress={() => props.navigation.navigate("Detalhes", dados)}
+                        onPress={() => props.navigation.navigate("Details", recomendation)}
                     />
                 </Animatable.View>
             ))
         }  
-
 </ScrollView>   
     
     );
 }
-
-
 
 
 
