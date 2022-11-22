@@ -52,6 +52,7 @@ const style = StyleSheet.create({
     flex: 1,
     alignContent: 'center',
     flexDirection: 'row',
+    marginBottom: 2,
   },
   emptyStar:{
     color: '#d4d4d4',
@@ -64,7 +65,6 @@ const style = StyleSheet.create({
     paddingTop: 3,
     fontSize: 23,
     paddingLeft: 5,
-    paddingRight: 120,
     fontFamily: 'Montserrat_700Bold',
   }
 })
