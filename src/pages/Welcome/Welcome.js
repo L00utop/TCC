@@ -20,7 +20,7 @@ export default function Welcome() {
 
             <Animatable.View animation="fadeInUp" duration={1400} style={styles.containerForm}>
                 <View style={styles.titleForm}>
-                <Text style={styles.title}>Para
+                <Text style={styles.title}>Para{`\n`}
                 <View style={styles.animation}>
                     <Typewriter
                         words={['técnicos', 'designers', 'developers', 'você!']}
