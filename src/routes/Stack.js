@@ -46,7 +46,7 @@ export default function Routes() {
             name="Home"
             component={Home}
             options={{ headerShown: true, headerShadowVisible: false, headerTitle: ()=> 
-            <Animatable.View animation='fadeInLeft' delay={200} >
+            <Animatable.View animation='fadeInLeft' delay={100} >
                 <Text style={{fontFamily: 'Montserrat_800ExtraBold', fontSize: 18}}>Início</Text>
             </Animatable.View>,  
             headerLeft: ()=> null,  

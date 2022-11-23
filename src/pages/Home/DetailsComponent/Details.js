@@ -10,6 +10,7 @@ import * as Animatable from 'react-native-animatable'
 
 
 
+
 export default function DetalhesNew(props) {
   console.log(props.route.params)
   const [active, setActive] = useState(false)
@@ -54,7 +55,7 @@ export default function DetalhesNew(props) {
 
         <Animatable.View animation='fadeInRight'>
         <TouchableOpacity style={style.button}>
-          <Entypo name="phone" size={28} color="white"/>
+          <Entypo name="phone" size={28} color="white" style={{ transform: [{scaleX: -1}]}}/>
         </TouchableOpacity>
         </Animatable.View>
       </View>
@@ -73,7 +74,7 @@ const style = StyleSheet.create({
     borderRadius: 10,
     alignSelf: 'center',
     width: '98%',
-    height: 200
+    height: 200,
   },
 
   top: {
@@ -136,7 +137,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   
 
