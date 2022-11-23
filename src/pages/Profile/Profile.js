@@ -10,14 +10,15 @@ export default function Profile() {
       <Animatable.View animation="fadeInDown" style={style.infoCont}>
         <Image source={avatar} style={style.avatar} />
         <View style={style.info}>
-          <Text style={style.name}>Nome</Text>
-          <Text style={style.descritpion}>descrição</Text>
+          <Text style={style.name}>Nome de usuário</Text>
+          <Text style={style.descritpion}>Lorem ipsum dolor sit amet. Non dolorum quos et quod obcaecati ea omnis...</Text>
         </View>
         <FontAwesome name="star" size={34} style={style.fullStar} />
         <Text>4.5</Text>
       </Animatable.View>
       <View style={style.statusCont}>
         <Text style={style.statistics}>Estatísticas</Text>
+
       </View>
 
       <View></View>
@@ -28,20 +29,27 @@ export default function Profile() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#3382fb",
+  },
+
+  info: {
+    flex: 1,
+  },
+  
+  name: {
+    padding: 5,   
+    fontSize: 18,
+    fontFamily: 'Montserrat_600SemiBold'
+  },
+
+  descritpion: {
+    padding: 5,
+    fontSize: 18,
+    fontFamily: 'Montserrat_600SemiBold',
+    color: '#a1a1a1'
   },
 
   infoCont: {
-    flex: 1,
-    flexDirection: "row",
-    shadowColor: "#000",
-    width: "100%",
-    shadowOffset: {
-      width: 5,
-      height: 2,
-    },
-    shadowOpacity: 0.37,
-    shadowRadius: 7.49,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     padding: 5,

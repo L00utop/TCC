@@ -27,9 +27,9 @@ export default function DetalhesNew(props) {
             starSize={34}
             count={5}
             half={true}
-            fullStar={<FontAwesome name="star" size={34} style={style.fullStar} />}
-            emptyStar={<FontAwesome name="star-o" size={34} style={style.emptyStar} />}
-            halfStar={<FontAwesome name="star-half-full" size={34} style={style.fullStar} />}
+            fullStar={<FontAwesome name="star" size={34} style={style.fullStar}/>}
+            emptyStar={<FontAwesome name="star-o" size={34} style={style.emptyStar}/>}
+            halfStar={<FontAwesome name="star-half-full" size={34} style={style.fullStar}/>}
           />
         </Animatable.View>
       </View>
@@ -37,7 +37,7 @@ export default function DetalhesNew(props) {
 
       <Animatable.View animation='fadeInUp' duration={900} style={style.mid}>
         <Text style={style.description}>{props.route.params.description}</Text>
-        <Text style={style.description2}>{props.route.params.description2}{`\n `}</Text>
+        <Text style={style.description2}>{props.route.params.description2}{`\n`}</Text>
       </Animatable.View>
       <Animatable.View animation='fadeInUp' duration={900} style={style.mid2}>
         <Text style= {style.title}>{props.route.params.price}</Text>
