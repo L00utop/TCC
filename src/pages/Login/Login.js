@@ -1,13 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import { Text, View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
 
 import { useNavigation } from "@react-navigation/native";
 
+import Parse from 'parse/react-native.js';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
+Parse.setAsyncStorage(AsyncStorage);
+//Paste below the Back4App Application ID AND the JavaScript KEY
+Parse.initialize('Ax352cf6WQNDf4nGdSFLTNbgGhZ8tbXq0apgcz3D', 'UaNdcZVED7IP4CSTpWZWxbfxHSejC3OHp5oxRWQD');
+//Point to Back4App Parse API address 
+Parse.serverURL = 'https://parseapi.back4app.com/';
+
+
+let listUsers = [];
+let userLogado;
 export default function Login() {
     const Navigation = useNavigation();
+
+    async function findUser() {
+
+        let query = new Parse.Query('Usuario');
+     
+        let queryResult = await query.find();
+            
+        queryResult.map(u=>{
+            listUsers.add = u;
+        })
+    }
+
+      useEffect(() => {
+        findUser()
+      }, []);
+
+    function logar(email,senha){
+        listUsers.forEach((u)=>{
+            if(u.get("Email") == email && u.get("Password") == senha){
+                userLogado = u;
+                return true;
+            }
+        })
+        alert("Não encontrado");
+        return false;
+    }
+    
+
+    let dados = {
+        Email: "",
+        Password: "",
+    }
+
     return(
     <View style={styles.container}>
         <Animatable.View animation="fadeInLeft" delay={400} style={styles.containerHeader}>
@@ -16,13 +60,18 @@ export default function Login() {
         
         <Animatable.View animation="fadeInUp" style={styles.containerForm}>
             <Text style={styles.title}>Email</Text>
-            <TextInput placeholder="Seu email" style={styles.input}/>
+            <TextInput placeholder="Seu email" style={styles.input} onChange={(email)=>{
+                dados.Email = email.nativeEvent.text;
+            }}/>
 
             <Text style={styles.title}>Senha</Text>
-            <TextInput placeholder="Sua senha" secureTextEntry={true} style={styles.input}/>
+            <TextInput placeholder="Sua senha" secureTextEntry={true} style={styles.input} onChange={(senha)=>{
+                dados.Password = senha.nativeEvent.text;
+            }}/>
+            <TouchableOpacity></TouchableOpacity>
 
             <TouchableOpacity style={styles.button} 
-            onPress={ () => Navigation.navigate('Home')}>
+            onPress={console.log(dados)}>
                 <Text style={styles.buttonTxt}>Acessar</Text>
             </TouchableOpacity>
 

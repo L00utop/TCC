@@ -8,13 +8,17 @@ export default function Profile() {
   return (
     <View style={style.container}>
       <Animatable.View animation="fadeInDown" style={style.infoCont}>
+        <View style={{flexDirection: 'row'}}>
         <Image source={avatar} style={style.avatar} />
-        <View style={style.info}>
+        <View >
           <Text style={style.name}>Nome de usuário</Text>
+        <FontAwesome name="star" size={20} color="#539afc"> <Text style={{fontFamily: 'Montserrat_600SemiBold'}}>4.5</Text></FontAwesome>
+        </View>
+        </View>
+        <View style={style.info}>
           <Text style={style.descritpion}>Lorem ipsum dolor sit amet. Non dolorum quos et quod obcaecati ea omnis...</Text>
         </View>
-        <FontAwesome name="star" size={34} style={style.fullStar} />
-        <Text>4.5</Text>
+   
       </Animatable.View>
       <View style={style.statusCont}>
         <Text style={style.statistics}>Estatísticas</Text>
@@ -36,8 +40,8 @@ const style = StyleSheet.create({
     flex: 1,
   },
   
-  name: {
-    padding: 5,   
+  name: {   
+    paddingTop: 5,
     fontSize: 18,
     fontFamily: 'Montserrat_600SemiBold'
   },
@@ -68,6 +72,7 @@ const style = StyleSheet.create({
     width: 100,
     alignSelf: 'flex-start',
     borderRadius: 20,
+    margin: 7
   },
 
   statusCont: {
