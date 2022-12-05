@@ -63,7 +63,7 @@ export default function Routes() {
             component={Profile}
             options={{headerShown: true, headerShadowVisible: false, 
                 headerTitle: ()=> 
-                <Animatable.View animation='fadeIn' duration={900}>
+                <Animatable.View animation='slideInDown' duration={900}>
                     <Text style={{fontFamily: 'Montserrat_800ExtraBold', fontSize: 18}}>Perfil</Text>
                 </Animatable.View>,
                 headerRight: ()=> 

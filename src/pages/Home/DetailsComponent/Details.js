@@ -13,6 +13,7 @@ import * as Animatable from 'react-native-animatable'
 
 export default function DetalhesNew(props) {
   console.log(props.route.params)
+
   const [active, setActive] = useState(false)
   return (
     <View style={style.container}>
@@ -52,6 +53,7 @@ export default function DetalhesNew(props) {
           <FontAwesome name="whatsapp" size={28} color="white"/>
         </TouchableOpacity>
         </Animatable.View>
+        
 
         <Animatable.View animation='fadeInRight'>
         <TouchableOpacity style={style.button}>
@@ -86,7 +88,7 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
     alignContent: 'center',
     flexDirection: 'row',
-    marginBottom: 2,
+    marginBottom: 16,
     alignItems: 'center'
   },
   
@@ -97,6 +99,7 @@ const style = StyleSheet.create({
   },
   mid2: {
     flex: 1,
+    marginTop: 18,
     paddingHorizontal: 3,
     flexDirection: 'row',
     alignContent: 'center',

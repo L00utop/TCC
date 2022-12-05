@@ -29,7 +29,7 @@ export default function Profile() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#3382fb",
+    backgroundColor: "#fff",
   },
 
   info: {
@@ -53,6 +53,14 @@ const style = StyleSheet.create({
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     padding: 5,
+    backgroundColor: '#fff',
+    shadowColor: "#000",
+    shadowOffset: {
+    width: 5,
+    height: 5,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
   },
 
   avatar: {
@@ -64,5 +72,6 @@ const style = StyleSheet.create({
 
   statusCont: {
     flex: 2,
+    
   },
 });
