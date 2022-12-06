@@ -12,6 +12,7 @@ import Recomendation from "./Recomendations/Recomendation";
 
 
 export default function Home(props) {
+    console.log(props.route.params.get("Name"))
     const navigation = useNavigation();
 
     const dados = [

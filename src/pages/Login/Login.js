@@ -9,49 +9,41 @@ import Parse from 'parse/react-native.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 Parse.setAsyncStorage(AsyncStorage);
-//Paste below the Back4App Application ID AND the JavaScript KEY
 Parse.initialize('Ax352cf6WQNDf4nGdSFLTNbgGhZ8tbXq0apgcz3D', 'UaNdcZVED7IP4CSTpWZWxbfxHSejC3OHp5oxRWQD');
-//Point to Back4App Parse API address 
 Parse.serverURL = 'https://parseapi.back4app.com/';
 
 
-let listUsers = [];
-let userLogado;
-export default function Login() {
-    const Navigation = useNavigation();
+let dados = {
+    Email: "",
+    Password: "",
+}
 
-    async function findUser() {
+export default function Login(props) {
+    const navigation = useNavigation();
 
-        let query = new Parse.Query('Usuario');
-     
-        let queryResult = await query.find();
-            
-        queryResult.map(u=>{
-            listUsers.add = u;
-        })
-    }
 
-      useEffect(() => {
-        findUser()
-      }, []);
-
-    function logar(email,senha){
-        listUsers.forEach((u)=>{
-            if(u.get("Email") == email && u.get("Password") == senha){
-                userLogado = u;
-                
-                return true;
-            }
-        })
-        alert("Não encontrado");
-        return false;
-    }
+    async function logar(email, senha){
+        let queryUser = new Parse.Query('Usuario');
+        queryUser.equalTo("Email",email);
     
-
-    let dados = {
-        Email: "",
-        Password: "",
+        let resultUser = (await queryUser.find())[0];    
+        if(resultUser != undefined){
+            if(resultUser.get("Password") == senha ){
+                //console.log("Logado")
+                props.navigation.navigate("Home", resultUser)
+            }
+            else{
+                //console.log("Senha incorreta")
+            }
+        }
+        else{
+            //console.log("Usuário não encontrado")
+        }
+        // result.forEach(r =>{
+        //     console.log(r.get("Name"))
+        // })
     }
+
 
     return(
     <View style={styles.container}>
@@ -72,18 +64,20 @@ export default function Login() {
             <TouchableOpacity></TouchableOpacity>
 
             <TouchableOpacity style={styles.button} 
-            onPress={() => logar.Navigation.navigate('Home')}>
+                onPress={()=>{logar(dados.Email,dados.Password)}}>
                 <Text style={styles.buttonTxt}>Acessar</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.buttonCad}
-            onPress={ () => Navigation.navigate('SignIn')}>
+            onPress={ () => navigation.navigate('SignIn')}>
                 <Text style={styles.cadTxt}>Não possui conta? Cadastre-se.</Text>
             </TouchableOpacity>
         </Animatable.View>
     </View>
     );  
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
