@@ -39,6 +39,7 @@ export default function Login() {
         listUsers.forEach((u)=>{
             if(u.get("Email") == email && u.get("Password") == senha){
                 userLogado = u;
+                
                 return true;
             }
         })
@@ -71,7 +72,7 @@ export default function Login() {
             <TouchableOpacity></TouchableOpacity>
 
             <TouchableOpacity style={styles.button} 
-            onPress={console.log(dados)}>
+            onPress={() => logar.Navigation.navigate('Home')}>
                 <Text style={styles.buttonTxt}>Acessar</Text>
             </TouchableOpacity>
 
