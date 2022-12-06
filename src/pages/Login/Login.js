@@ -24,24 +24,21 @@ export default function Login(props) {
 
     async function logar(email, senha){
         let queryUser = new Parse.Query('Usuario');
-        queryUser.equalTo("Email",email);
+        queryUser.equalTo("Email", email);
     
         let resultUser = (await queryUser.find())[0];    
         if(resultUser != undefined){
             if(resultUser.get("Password") == senha ){
-                //console.log("Logado")
+                console.log("Logado")
                 props.navigation.navigate("Home", resultUser)
             }
             else{
-                //console.log("Senha incorreta")
+                console.log("Senha incorreta")
             }
         }
         else{
-            //console.log("Usuário não encontrado")
+            console.log("Usuário não encontrado")
         }
-        // result.forEach(r =>{
-        //     console.log(r.get("Name"))
-        // })
     }
 
 

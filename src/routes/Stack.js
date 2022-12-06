@@ -20,7 +20,8 @@ import Details from '../pages/Home/DetailsComponent/Details'
 const Stack = createNativeStackNavigator();
 
 
-export default function Routes() { 
+export default function Routes(props) { 
+    console.log(props)
     const Navigation = useNavigation();
     return(
         <Stack.Navigator>
