@@ -3,25 +3,68 @@ import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
 import * as Animatable from "react-native-animatable";
 import avatar from "../../../assets/avatar.png";
 import { FontAwesome } from "@expo/vector-icons";
+import { LineChart } from "react-native-chart-kit";
+import { max } from "react-native-reanimated";
+
+
+
 
 export default function Profile() {
+  const screenWidth = Dimensions.get("window").width;
   return (
     <View style={style.container}>
-      <Animatable.View animation="fadeInDown" style={style.infoCont}>
-        <Image source={avatar} style={style.avatar} />
+      <Animatable.View animation="slideInDown" style={style.infoCont}>
+        <View style={{ flexDirection: 'row' }}>
+          <Image source={avatar} style={style.avatar} />
+          <View>
+            <Text style={style.name}>Nome de usuário</Text>
+            <FontAwesome name="star" size={20} color="#539afc">
+              <Text style={{fontFamily: "Montserrat_600SemiBold"}}>4.5</Text>
+              </FontAwesome>
+          </View>
+        </View>
         <View style={style.info}>
-          <Text style={style.name}>Nome de usuário</Text>
           <Text style={style.descritpion}>Lorem ipsum dolor sit amet. Non dolorum quos et quod obcaecati ea omnis...</Text>
         </View>
-        <FontAwesome name="star" size={34} style={style.fullStar} />
-        <Text>4.5</Text>
       </Animatable.View>
       <View style={style.statusCont}>
         <Text style={style.statistics}>Estatísticas</Text>
-
+        <LineChart
+  data={{
+    datasets: [
+      {
+        data: [
+          Math.random() * 100,
+          Math.random() * 100,
+          Math.random() * 100,
+          Math.random() * 100,
+          Math.random() * 100,
+          Math.random() * 100,
+        
+        ],
+      },
+    ],
+  }}
+  width={Dimensions.get('window').width - 16} // from react-native
+  height={220}
+  chartConfig={{
+    backgroundGradientFrom: '#FFF',
+    backgroundGradientTo: '#FFF',
+    decimalPlaces: 3, // optional, defaults to 2dp
+    color: (opacity = 0) => `rgba(83, 154, 252, ${opacity})`,
+    style: {
+      borderRadius: 16,
+    },
+  }}
+  bezier
+  style={{
+    marginVertical: 8,
+    borderRadius: 16,
+    fontFamily: "Montserrat_600SemiBold"
+  }}
+/>
       </View>
 
-      <View></View>
     </View>
   );
 }
@@ -29,15 +72,15 @@ export default function Profile() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#539afc",
   },
 
   info: {
     flex: 1,
   },
-  
+
   name: {
-    padding: 5,   
+    paddingTop: 5,
     fontSize: 18,
     fontFamily: 'Montserrat_600SemiBold'
   },
@@ -56,8 +99,8 @@ const style = StyleSheet.create({
     backgroundColor: '#fff',
     shadowColor: "#000",
     shadowOffset: {
-    width: 5,
-    height: 5,
+      width: 5,
+      height: 5,
     },
     shadowOpacity: 0.37,
     shadowRadius: 7.49,
@@ -68,10 +111,11 @@ const style = StyleSheet.create({
     width: 100,
     alignSelf: 'flex-start',
     borderRadius: 20,
+    margin: 5,
   },
 
   statusCont: {
     flex: 2,
-    
+
   },
 });
