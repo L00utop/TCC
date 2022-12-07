@@ -49,9 +49,6 @@ export default function SignIn(props) {
             <Text style={styles.title}>Senha</Text>
             <TextInput placeholder="Sua senha" secureTextEntry={true} style={styles.input} onChange={(password)=>{ dados.pass = password.nativeEvent.text}}/>
 
-            <Text style={styles.title}>Confirme a senha</Text>
-            <TextInput placeholder="Confirme sua senha" secureTextEntry={true} style={styles.input} onChange={(password)=>{ dados.pass = password.nativeEvent.text}}/>
-
             <TouchableOpacity style={styles.button} 
             onPress={ () => {
                 cadastrar(dados.name,dados.email,dados.pass);
